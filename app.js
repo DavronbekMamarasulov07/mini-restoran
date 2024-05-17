@@ -34,6 +34,12 @@ const addNewMenu = function(){
 
 const showMenu = function(){
     result.innerHTML = ""
+    if (ALL_MENU.length === 0) {
+        result.innerHTML = `<div class="food-item">
+            <p>No matching items found</p>
+        </div>`;
+        return;
+    }
     ALL_MENU.forEach(menu => {
         result.innerHTML += `
             <div class="food-item">
@@ -58,7 +64,10 @@ const searchFood = function() {
 //     showSearchResult(elements);
 // };
 const showSearchResult = function(results) {
+
+
     result.innerHTML = "";
+    
     if (results.length === 0) {
         result.innerHTML = `<div class="food-item">
             <p>No matching items found</p>
