@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(https://aromalux.uz/wp-content/uploads/2022/06/12po.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .wrapper {
+            max-width: 800px;
+            box-sizing: content-box;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            height: 300px;
+        }
+
+        .btn-items{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #result {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px 0;
+        }
+
+        .food-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+            justify-content: space-between;
+            background-color: #fff;
+            opacity: 80%;
+            padding: 10px 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #add-btn, #menu , #sort-btn, #clear-btn{
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(255, 30, 30);
+            color: #fff;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+        #search-btn{
+            padding: 7px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(45, 232, 38);
+            color: #fff;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+       #repload-btn{
+            padding: 7px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(246, 20, 16);
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+
+        .search {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            margin: 10px;
+            padding: 10px 20px 10px 5px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            background-color: #ffffffc2;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        #menu-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .menu-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        .menu-item span {
+            display: block;
+            font-weight: bold;
+        }
+
+        .menu-item h2 {
+            margin: 5px 0;
+        }
