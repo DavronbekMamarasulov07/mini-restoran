@@ -45,7 +45,7 @@ const showMenu = function(){
             <div class="food-item">
                 <span>${menu.id}</span>
                 <h2>${menu.name}</h2>
-                <span>${`$${menu.price}`}</span>
+                <span>${`${menu.price}  so'm`}</span>
             </div>
         `
     })
