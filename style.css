@@ -16,7 +16,7 @@
         }
 
         .wrapper {
-            max-width: 850px;
+            max-width: 1050px;
             box-sizing: content-box;
             width: 100%;
             display: flex;
@@ -44,12 +44,15 @@
             width: 100%;
             display: flex;
             align-items: center;
-            max-width: 850px;
+            max-width: 1050px;
             justify-content: space-between;
             background-color: #fff;
             opacity: 80%;
             padding: 10px 20px;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
         }
 
         #add-btn, #menu , #sort-btn, #clear-btn{
@@ -76,6 +79,18 @@
             font-weight: 500;
             font-style: normal;
         }
+        #filter-btn{
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(237, 162, 41);
+            color: #fff;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
        #repload-btn{
             padding: 7px 15px;
             font-size: 16px;
@@ -95,7 +110,7 @@
 
         input[type="text"] {
             margin: 10px;
-            padding: 10px 20px 10px 5px;
+            padding: 10px 20px 10px 10px;
             border-radius: 5px;
             outline: none;
             border: none;
@@ -104,6 +119,7 @@
             font-weight: 500;
             font-style: normal;
         }
+       
 
         #menu-list {
             display: flex;

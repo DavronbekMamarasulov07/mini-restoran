@@ -5,10 +5,11 @@ const searchBtn = document.querySelector("#search-btn");
 const result = document.querySelector("#result")
 const sortBtn = document.querySelector("#sort-btn")
 const clearBtn = document.querySelector("#clear-btn")
+const filterBtn = document.querySelector("#filter-btn")
 
 
 function newMenu(n,p){
-    this.id = (Math.floor(Math.random() * 100000)+ 1).toString().padStart(6, "0")
+    this.id = (Math.floor(Math.random() * 100)+ 1).toString().padStart(3, "0")
     this.name = n;
     this.price = p
      
@@ -64,8 +65,6 @@ const searchFood = function() {
 //     showSearchResult(elements);
 // };
 const showSearchResult = function(results) {
-
-
     result.innerHTML = "";
     
     if (results.length === 0) {
@@ -117,12 +116,87 @@ const sortMenuByPrice = function(){
     showMenu();
 }
 
-clearBtn.addEventListener("click", () => {
-    window.location.reload();
-    localStorage.clear()
-})
 
 
+
+
+function filterFood() {
+    let startFoodPrice = parseFloat(prompt("Enter the starting food price: "));
+    while (isNaN(startFoodPrice)) {
+        alert("Please enter a valid numeric food price!");
+        startFoodPrice = parseFloat(prompt("Enter the starting food price: "));
+    }
+    
+    let fromTo = parseFloat(prompt("Enter the end food price: "));
+    while (isNaN(fromTo)) {
+        alert("Please enter a valid numeric food price!");
+        fromTo = parseFloat(prompt("Enter the end food price: "));
+    }
+    
+    let elements = ALL_MENU.filter(element => {
+        let price = parseFloat(element.price);
+        return price >= startFoodPrice && price <= fromTo;
+    });
+    
+    displayFoods(elements);
+    console.log(elements);
+}
+
+
+function displayFoods(db) {
+    result.innerHTML = ""
+    db.forEach(menu => {
+        result.innerHTML += `
+            <div class="food-item">
+                <span>${menu.id}</span>
+                <h2>${menu.name}</h2>
+                <span>${`${menu.price}  so'm`}</span>
+            </div>
+        `
+    })
+}
+
+
+ const showRemoveResult = function(results) {
+    result.innerHTML = "";
+    
+    if (results.length === 0) {
+        result.innerHTML = `<div class="food-item">
+            <p>No matching items found</p>
+        </div>`;
+        return;
+    }
+    results.forEach(menu => {
+        result.innerHTML += `
+            <div class="food-item">
+                <span>${menu.id}</span>
+                <h2>${menu.name}</h2>
+                <span>${`${menu.price} so'm`}</span>
+            </div>
+        `;
+    });
+};
+let removeProduct = function () {
+    let removeId = prompt("Enter id to remove:  ");
+
+    if (!removeId) {
+        alert("Enter id to remove!!!: ");
+        return;
+    }
+
+    let updatedMenu = ALL_MENU.filter(element => element.id !== removeId);
+
+    localStorage.setItem("menu", JSON.stringify(updatedMenu));
+
+    showRemoveResult(updatedMenu);
+};
+
+
+
+
+
+clearBtn.addEventListener("click", removeProduct)
+filterBtn.addEventListener("click", filterFood)
 sortBtn.addEventListener("click" , sortMenuByPrice)
 addBtn.addEventListener("click", addNewMenu)
 showBtn.addEventListener("click", showMenu)
